@@ -1,0 +1,20 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">fecha</th>
+      <th scope="col">modelo</th>
+      <th scope="col">velocidad</th>
+      <th scope="col">patente</th>
+    </tr>
+  </thead>
+   <tbody>
+       <tr *ngFor="let auto of Autos" [ngClass]="colorEstilo(auto)">
+            <th scope="row"> {{auto.id}}</th>
+                <td scope="col">{{auto.fecha}} </td>
+                <td scope="col">{{auto.modelo}} </td>
+                <td scope="col">{{auto.velocidad}}kh </td>
+                <td scope="col" >{{auto.patente}} </td> 
+        </tr>
+  </tbody>
+</table >
