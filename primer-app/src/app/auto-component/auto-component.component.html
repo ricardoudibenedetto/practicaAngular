@@ -1,20 +1,33 @@
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">fecha</th>
-      <th scope="col">modelo</th>
-      <th scope="col">velocidad</th>
-      <th scope="col">patente</th>
-    </tr>
-  </thead>
-   <tbody>
-       <tr *ngFor="let auto of Autos" [ngClass]="colorEstilo(auto)">
-            <th scope="row"> {{auto.id}}</th>
-                <td scope="col">{{auto.fecha}} </td>
-                <td scope="col">{{auto.modelo}} </td>
-                <td scope="col">{{auto.velocidad}}kh </td>
-                <td scope="col" >{{auto.patente}} </td> 
+<input type="text" [(ngModel)]="velocidad">
+
+<div class="row">
+  <div class="col-6">
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">fecha</th>
+          <th scope="col">modelo</th>
+          <th scope="col">velocidad</th>
+          <th scope="col">patente</th>
         </tr>
-  </tbody>
-</table >
+      </thead>
+       <tbody>
+          <tr *ngFor="let auto of Autos" [ngClass]="colorEstilo(auto)" (click)="setAuto(auto)">
+            <ng-container *ngIf="auto.velocidad > velocidad ">
+              <th scope="row"> {{auto.id}}</th>
+              <td scope="col">{{auto.fecha}} </td>
+              <td scope="col">{{auto.modelo}} </td>
+              <td scope="col">{{auto.velocidad}}kh </td>
+              <td scope="col" >{{auto.patente}} </td> 
+            </ng-container>
+          </tr>
+      </tbody>
+    </table >
+  </div>
+  <div *ngIf="auto">
+    <app-detalles class="col-6" [param]="auto"></app-detalles>
+  </div>
+</div>
+<!-- ngClass="{'clase': condicion, 'clase': condicion, }" -->

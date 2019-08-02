@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { NuevoComponenteComponent } from './nuevo-componente/nuevo-componente.component';
 import { ParrafoComponenteComponent } from './parrafo-componente/parrafo-componente.component';
 import { AutoComponentComponent } from './auto-component/auto-component.component';
+import { FormsModule }   from '@angular/forms';
+import { DetallesComponent } from './detalles/detalles.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NuevoComponenteComponent,
     ParrafoComponenteComponent,
-    AutoComponentComponent
+    AutoComponentComponent,
+    DetallesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,13 @@
+<!-- <h1>{{param.modelo}}</h1>
+
+<h2>{{param.velocidad}}kh</h2>
+<p>Año:{{param.fecha}} <br>Patente:{{param.patente}}</p>
+ -->
+<div class="card" style="width: 18rem;">
+        <img [src]="imagenAuto(param)" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{param.modelo}}</h5>
+          <p class="card-text">{{param.velocidad}}kh <br>Patente:{{param.patente}}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
