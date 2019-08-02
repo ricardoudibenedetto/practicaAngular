@@ -1,14 +1,15 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { identifierModuleUrl } from '@angular/compiler';
-
+import {Iauto} from '../iauto';
 @Component({
   selector: 'app-detalles',
   templateUrl: './detalles.component.html',
   styleUrls: ['./detalles.component.css']
 })
 export class DetallesComponent implements OnInit {
-  @Input("param") param : any;
+  @Input("param") param : Iauto;
 
+  
   imagenAuto(auto):string{
     if(auto.modelo == "ford KA")
     {

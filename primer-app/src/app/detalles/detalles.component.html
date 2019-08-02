@@ -4,10 +4,11 @@
 <p>Año:{{param.fecha}} <br>Patente:{{param.patente}}</p>
  -->
 <div class="card" style="width: 18rem;">
-        <img [src]="imagenAuto(param)" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{param.modelo}}</h5>
-          <p class="card-text">{{param.velocidad}}kh <br>Patente:{{param.patente}}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
+    <img [src]="imagenAuto(param)" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{param.modelo | uppercase}}</h5>
+        <p class="card-text">velocidad: {{param.velocidad}}kh  <br>Año: {{param.fecha
+        }}<br>Patente: {{param.patente}}</p>
+        <a href="#" class="btn btn-primary">Comprar</a>
+    </div>
+</div>

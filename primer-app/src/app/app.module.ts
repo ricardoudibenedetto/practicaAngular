@@ -8,7 +8,8 @@ import { ParrafoComponenteComponent } from './parrafo-componente/parrafo-compone
 import { AutoComponentComponent } from './auto-component/auto-component.component';
 import { FormsModule }   from '@angular/forms';
 import { DetallesComponent } from './detalles/detalles.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import {AutosService} from './autos.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { DetallesComponent } from './detalles/detalles.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 import { Time } from '@angular/common';
-
+import {AutosService} from '../autos.service';
+import {Iauto} from '../iauto';
 @Component({
   selector: 'app-auto-component',
   templateUrl: './auto-component.component.html',
@@ -9,10 +10,11 @@ import { Time } from '@angular/common';
 })
 export class AutoComponentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private servicioAuto : AutosService ) { }
   velocidad: number = 0;
-  auto:any;
-  Autos : {id:number,fecha : number , modelo : string , velocidad : number,patente : string}[]=
+  auto:Iauto;
+  Autos : Iauto[];
+ /*  Autos : {id:number,fecha : number , modelo : string , velocidad : number,patente : string}[]=
   [
     { "id":1,"fecha" : 2019, "modelo": "ford KA", velocidad: 210, patente :"AC 732 PT"},
     {"id":2, "fecha" : 2015, "modelo": "ford fiesta", velocidad: 250, patente :"BA 554 AC"},
@@ -24,8 +26,8 @@ export class AutoComponentComponent implements OnInit {
     { "id":8,"fecha" : 2009, "modelo": "chevrolet onix", velocidad: 120, patente :"AC 654 AC"},
     { "id":9,"fecha" : 2004, "modelo": "volkswagen gol", velocidad: 260, patente :"AT 452 TC"},
     {"id":10, "fecha" : 2019, "modelo": "ford KA", velocidad: 110, patente :"AF 454 BF"}
-  ]
-  colorEstilo(auto : any):string{
+  ] */
+  colorEstilo(auto : Iauto):string{
     if(auto.fecha < 2014){
       return "text-danger" 
     }else
@@ -37,7 +39,11 @@ export class AutoComponentComponent implements OnInit {
   {
     this.auto = auto;
   }
+  cargarAutos():void{
+    this.Autos = this.servicioAuto.getAutos();
+  }
   ngOnInit() {
+    this.cargarAutos();
   }
 
 }
