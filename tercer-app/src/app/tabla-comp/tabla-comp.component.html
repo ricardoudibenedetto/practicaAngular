@@ -1,0 +1,24 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">pos</th>
+      <th scope="col">equipo</th>
+      <th scope="col">PTS</th>
+      <th scope="col">PJ</th>
+      <th scope="col">PG</th>
+      <th scope="col">PE</th>
+      <th scope="col">PP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let equipo of tabla; let i = index" (click)="setEquipo(equipo.cod)">
+      <th scope="row">{{i}}</th>
+      <td>{{equipo.nombre}}</td>
+      <td>{{equipo.pts}}</td>
+      <td>{{equipo.pj}}</td>
+      <td>{{equipo.pg}}</td>
+      <td>{{equipo.pe}}</td>
+      <td>{{equipo.pp}}</td>
+    </tr>
+  </tbody>
+</table>
